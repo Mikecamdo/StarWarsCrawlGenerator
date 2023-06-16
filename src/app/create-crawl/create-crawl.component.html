@@ -1,1 +1,34 @@
-<p class="text-center">create-crawl works!</p>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h1 class="text-center star-wars-text">Star Wars Crawl Generator</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <form>
+                <div>
+                    <label for="intro" class="form-label">Intro</label>
+                    <input type="text" class="form-control mb-4" id="intro" name="intro" [(ngModel)]="intro">
+                </div>
+                <div>
+                    <label for="logo" class="form-label">Logo</label>
+                    <input type="text" class="form-control mb-4" id="logo" name="logo" [(ngModel)]="logo">
+                </div>
+                <div>
+                    <label for="title1" class="form-label">Title1</label>
+                    <input type="text" class="form-control mb-4" id="title1" name="title1" [(ngModel)]="title1">
+                </div>
+                <div>
+                    <label for="title2" class="form-label">Title2</label>
+                    <input type="text" class="form-control mb-4" id="title2" name="title2" [(ngModel)]="title2">
+                </div>
+                <div>
+                    <label for="body" class="form-label">Body</label>
+                    <textarea type="text" class="form-control mb-4" id="body" name="body" [(ngModel)]="body" rows="10">
+                    </textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

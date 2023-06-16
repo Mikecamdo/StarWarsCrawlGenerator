@@ -1,7 +1,23 @@
+/*Star Wars Yellow: #FFE81F*/
 * {
     color: #FFE81F;
 }
 
-p {
+.star-wars-text {
     font-family: 'StarJedi';
+}
+
+.outlined-text {
+    font-family: 'StarJediOutline';
+}
+
+.form-control:focus {
+    color: #FFE81F;
+    border-color: #FFE81F;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+textarea {
+    resize: none;
 }
