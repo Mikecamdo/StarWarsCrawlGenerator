@@ -16,18 +16,18 @@
             </div>
             <div>
                 <select [(ngModel)]="currentMovieTemplate">
-                    <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie">{{movie.title1}}</option>
+                    <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie">{{movie.title}}</option>
                 </select>
             </div>
             <div>
-                <label for="title1" class="form-label">Title1</label>
-                <input type="text" class="form-control mb-4" id="title1" name="title1"
-                    [(ngModel)]="currentMovieTemplate.title1">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control mb-4" id="title" name="title"
+                    [(ngModel)]="currentMovieTemplate.title">
             </div>
             <div>
-                <label for="title2" class="form-label">Title2</label>
-                <input type="text" class="form-control mb-4" id="title2" name="title2"
-                    [(ngModel)]="currentMovieTemplate.title2">
+                <label for="subtitle" class="form-label">Subtitle</label>
+                <input type="text" class="form-control mb-4" id="subtitle" name="subtitle"
+                    [(ngModel)]="currentMovieTemplate.subtitle">
             </div>
             <div>
                 <label for="body" class="form-label">Body</label>
