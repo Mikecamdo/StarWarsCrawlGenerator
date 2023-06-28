@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-crawl',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-crawl.component.css']
 })
 export class CreateCrawlComponent {
+  constructor(private router: Router) { }
+
   intro: string = 'A long time ago in a galaxy far, far away...';
   logo: string = 'Star Wars';
   currentMovieTemplate: MovieTemplate = {
@@ -88,6 +91,14 @@ export class CreateCrawlComponent {
       '\nMeanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....'
     }
   ]
+
+  disableButton(): boolean {
+    return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title1 || !this.currentMovieTemplate.title2;
+  }
+
+  generateCrawl(): void {
+    this.router.navigate(['/generated-crawl']);
+  }
 }
 
 interface MovieTemplate {
