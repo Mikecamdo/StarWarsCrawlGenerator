@@ -1,24 +1,17 @@
 <div class="container">
     <div class="intro">
-        A long time ago, in a galaxy far, far away....
+        {{intro}}
     </div>
     
     <div id="board">
         <div id="content">
-            <p id="title">Episode I</p>
-            <p id="subtitle">THE PHANTOM MENANCE</p>
+            <p id="title">{{title}}</p>
+            <p id="subtitle">{{subtitle}}</p>
             <br>
-            <p>
-                Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems is in dispute.
-            </p>
-            <br>
-            <p>
-                Hoping to resolve the matter with a blockade of deadly battleships, the greedy Trade Federation has stopped all shipping to the small planet of Naboo.
-            </p>
-            <br>
-            <p>
-                While the Congress of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace and justice in the galaxy, to settle the conflict....
-            </p>
+            <div *ngFor="let paragraph of body">
+                <p>{{paragraph}}</p>
+                <br/>
+            </div>
         </div>
     </div>
 </div>

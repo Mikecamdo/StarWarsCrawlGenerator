@@ -62,7 +62,7 @@ export class CreateCrawlComponent {
       title1: 'Episode VI',
       title2: 'RETURN OF THE JEDI',
       body: 
-      'Luke Skywalker has returned to his home planet of Tatooine inan attempt to rescue his friend Han Solo from the clutches of the vile gangster Jabba the Hutt.' +
+      'Luke Skywalker has returned to his home planet of Tatooine in an attempt to rescue his friend Han Solo from the clutches of the vile gangster Jabba the Hutt.' +
       '\nLittle does Luke know that the GALACTIC EMPIRE has secretly begun construction on a new armored space station even more powerful than the first dreaded Death Star.' +
       '\nWhen completed, this ultimate weapon will spell certain doom for the small band of rebels struggling to restore freedom to the galaxy...'
     },
@@ -97,7 +97,14 @@ export class CreateCrawlComponent {
   }
 
   generateCrawl(): void {
-    this.router.navigate(['/generated-crawl']);
+    const content = {
+      intro: this.intro,
+      logo: this.logo,
+      title: this.currentMovieTemplate.title1,
+      subtitle: this.currentMovieTemplate.title2,
+      body: this.currentMovieTemplate.body
+    }
+    this.router.navigate(['/generated-crawl'], {queryParams: content});
   }
 }
 
