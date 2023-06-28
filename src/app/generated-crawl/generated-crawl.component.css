@@ -44,7 +44,7 @@ body {
 }
 
 p {
-    color: #FFFF82;
+    color: #FFE81F;
 }
 
 /* Set the font, lean the board, position it */
@@ -74,8 +74,8 @@ p {
 }
 
 /* Set the scrolling animation and position it */
-#content {
-    animation: scroll 100s linear 16s;
+#content { /* FIXME linear determines how long before the crawl text appears */
+    animation: scroll 100s linear 6s; /* FIXME change this to affect scroll speed */
     position: absolute;
     top: 100%;
 }
@@ -85,7 +85,7 @@ p {
     text-align: center;
 }
 
-@keyframes scroll {
+@keyframes scroll { /* FIXME or change this to affect scroll speed */
     0% {
         top: 100%;
     }
