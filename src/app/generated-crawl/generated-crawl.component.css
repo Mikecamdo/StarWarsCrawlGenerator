@@ -43,6 +43,40 @@ body {
     }
 }
 
+.logo {    
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    margin: auto;
+    animation: logo 9s ease-out 1s;
+    opacity: 0;
+    color: black;
+    text-shadow:
+      -0.5px -0.5px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      0.5px -0.5px 0 #FFE81F,
+      -0.5px 0.5px 0 #FFE81F,
+      0.5px 0.5px 0 #FFE81F;
+    font-family: StarJedi;
+}
+
+@keyframes logo {
+    0% {
+        width: 50%;        
+        transform: scale(15);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        width: 50%;      
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.1);
+        width: 50%;
+    }
+}
+
 p {
     color: #FFE81F;
 }
@@ -75,7 +109,7 @@ p {
 
 /* Set the scrolling animation and position it */
 #content { /* FIXME linear determines how long before the crawl text appears */
-    animation: scroll 100s linear 6s; /* FIXME change this to affect scroll speed */
+    animation: scroll 100s linear 16s; /* FIXME change this to affect scroll speed */
     position: absolute;
     top: 100%;
 }
