@@ -21,3 +21,22 @@
 textarea {
     resize: none;
 }
+
+#intro {
+    color: rgb(75, 213, 238);
+}
+
+#logo {
+    color: black;
+    text-shadow:
+      -1px -1px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      1px -1px 0 #FFE81F,
+      -1px 1px 0 #FFE81F,
+      1px 1px 0 #FFE81F;
+    font-family: StarJedi;
+    line-height: 2rem;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}

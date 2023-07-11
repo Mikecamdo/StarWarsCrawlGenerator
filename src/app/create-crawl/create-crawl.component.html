@@ -12,7 +12,10 @@
             </div>
             <div>
                 <label for="logo" class="form-label">Logo</label>
-                <input type="text" class="form-control mb-4" id="logo" name="logo" [(ngModel)]="logo">
+                <!-- <input type="text" class="form-control mb-4 fs-1" id="logo" name="logo" [(ngModel)]="logo"> -->
+                <textarea type="text" class="form-control mb-4 fs-1" id="logo" name="logo"
+                    [(ngModel)]="logo" rows="2">
+                    </textarea>
             </div>
             <div>
                 <select [(ngModel)]="currentMovieTemplate">

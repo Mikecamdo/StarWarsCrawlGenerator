@@ -10,7 +10,7 @@ export class CreateCrawlComponent {
   constructor(private router: Router) { }
 
   intro: string = 'A long time ago in a galaxy far, far away...';
-  logo: string = 'STAR WARS';
+  logo: string = 'STAR\nWARS';
   currentMovieTemplate: MovieTemplate = {
     title: '',
     subtitle: '',
