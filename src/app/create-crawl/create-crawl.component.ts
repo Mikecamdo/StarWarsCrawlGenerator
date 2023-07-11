@@ -93,7 +93,11 @@ export class CreateCrawlComponent {
   ]
 
   disableButton(): boolean {
-    return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle;
+    return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle || this.showInvalidMessage();
+  }
+
+  showInvalidMessage(): boolean {
+    return this.logo.split('\n').length > 2;
   }
 
   generateCrawl(): void {

@@ -18,6 +18,12 @@
     outline: none !important;
 }
 
+#intro.form-control:focus {
+    border-color: rgb(75, 213, 238);
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 textarea {
     resize: none;
 }
@@ -46,4 +52,8 @@ textarea::-webkit-scrollbar {
     --bs-btn-hover-border-color: #FFE81F;
     --bs-btn-disabled-border-color: #FFE81F;
     --bs-btn-disabled-color: #FFE81F;
+}
+
+.alert-warning {
+    --bs-alert-border-color: #FFE81F;
 }

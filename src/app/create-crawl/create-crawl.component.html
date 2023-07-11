@@ -17,6 +17,9 @@
                     [(ngModel)]="logo" rows="2">
                     </textarea>
             </div>
+            <div *ngIf="showInvalidMessage()">
+                <div class="alert alert-warning">The logo can only have 2 lines!</div>
+            </div>
             <div>
                 <select [(ngModel)]="currentMovieTemplate">
                     <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie">{{movie.title}}</option>
