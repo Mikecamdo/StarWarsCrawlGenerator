@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   intro: string = '';
-  logo: string = '';
+  topLogo: string = '';
+  bottomLogo: string = '';
   title: string = '';
   subtitle: string = '';
   body: string[] = [];
@@ -23,7 +24,15 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.intro = params['intro'];
-      this.logo = params['logo'];
+
+      let logoParts: string[] = params['logo'].split(' '); //FIXME need to limit user to entering 2 lines
+      this.topLogo = logoParts[0];
+      this.bottomLogo = logoParts[1];
+
+      console.log("The stuff:");
+      console.log(this.topLogo);
+      console.log(this.bottomLogo);
+
       this.title = params['title'];
       this.subtitle = params['subtitle'];
 

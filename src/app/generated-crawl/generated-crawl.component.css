@@ -49,7 +49,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 9999;
     margin: auto;
-    animation: logo 9s ease-out 1s;
+    animation: logo 9s ease-out 1s; /* The second value affects when it comes in, should be 9s */
     opacity: 0;
     color: black;
     text-shadow:
@@ -58,6 +58,10 @@ body {
       -0.5px 0.5px 0 #FFE81F,
       0.5px 0.5px 0 #FFE81F;
     font-family: StarJedi;
+}
+
+.shrink-size {
+    max-height: .8rem;
 }
 
 @keyframes logo {
