@@ -28,11 +28,12 @@ export class CreateCrawlComponent implements AfterViewInit {
 
   intro: string = 'A long time ago in a galaxy far, far away...';
   logo: string = 'STAR\nWARS';
-  currentMovieTemplate: MovieTemplate = {
-    title: '',
-    subtitle: '',
-    body: ""
-  };
+  
+  // {
+  //   title: '',
+  //   subtitle: '',
+  //   body: ""
+  // };
 
   movieTemplates: MovieTemplate[] = [
     {
@@ -108,6 +109,8 @@ export class CreateCrawlComponent implements AfterViewInit {
       '\nMeanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....'
     }
   ]
+
+  currentMovieTemplate: MovieTemplate = this.movieTemplates[0];
 
   disableButton(): boolean {
     return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle || this.showInvalidMessage();

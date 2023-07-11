@@ -34,6 +34,7 @@ textarea {
 
 #logo {
     color: black;
+    caret-color: #FFE81F;
     text-shadow:
       -1px -1px 0 #FFE81F, /* Adjust the offset and color for the outline */
       1px -1px 0 #FFE81F,
@@ -62,4 +63,8 @@ textarea::-webkit-scrollbar {
 
 .max-size {
     max-width: 500px;
+}
+
+.max-size-two {
+    max-width: 700px;
 }
