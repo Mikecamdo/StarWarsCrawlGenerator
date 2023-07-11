@@ -40,3 +40,10 @@ textarea {
 textarea::-webkit-scrollbar {
     display: none;
 }
+
+.btn-primary {
+    --bs-btn-border-color: #FFE81F;
+    --bs-btn-hover-border-color: #FFE81F;
+    --bs-btn-disabled-border-color: #FFE81F;
+    --bs-btn-disabled-color: #FFE81F;
+}
