@@ -20,25 +20,25 @@
             <div *ngIf="showInvalidMessage()">
                 <div class="alert alert-warning">The logo can only have 2 lines!</div>
             </div>
-            <div class="text-center">
-                <select [(ngModel)]="currentMovieTemplate">
+            <div class="mx-auto max-size-two">
+                <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select">
                     <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie">{{movie.title}}</option>
                 </select>
             </div>
             <div class="mx-auto max-size-two">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control mb-4" id="title" name="title"
-                    [(ngModel)]="currentMovieTemplate.title">
+                    [(ngModel)]="selectedMovieTemplate.title">
             </div>
             <div class="mx-auto max-size-two">
                 <label for="subtitle" class="form-label">Subtitle</label>
                 <input type="text" class="form-control mb-4" id="subtitle" name="subtitle"
-                    [(ngModel)]="currentMovieTemplate.subtitle">
+                    [(ngModel)]="selectedMovieTemplate.subtitle">
             </div>
             <div class="mx-auto max-size-two">
                 <label for="body" class="form-label">Body</label>
                 <textarea type="text" class="form-control mb-4" id="body" name="body"
-                    [(ngModel)]="currentMovieTemplate.body" rows="10">
+                    [(ngModel)]="selectedMovieTemplate.body" rows="10">
                     </textarea>
             </div>
         </div>

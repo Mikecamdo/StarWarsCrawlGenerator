@@ -26,15 +26,6 @@ export class CreateCrawlComponent implements AfterViewInit {
     console.log(textArea.style.height);
   }
 
-  intro: string = 'A long time ago in a galaxy far, far away...';
-  logo: string = 'STAR\nWARS';
-  
-  // {
-  //   title: '',
-  //   subtitle: '',
-  //   body: ""
-  // };
-
   movieTemplates: MovieTemplate[] = [
     {
       title: 'Episode I',
@@ -109,8 +100,11 @@ export class CreateCrawlComponent implements AfterViewInit {
       '\nMeanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....'
     }
   ]
+  intro: string = 'A long time ago in a galaxy far, far away...';
+  logo: string = 'STAR\nWARS';
 
   currentMovieTemplate: MovieTemplate = this.movieTemplates[0];
+  selectedMovieTemplate: MovieTemplate = { ...this.movieTemplates[0] };
 
   disableButton(): boolean {
     return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle || this.showInvalidMessage();
@@ -124,9 +118,9 @@ export class CreateCrawlComponent implements AfterViewInit {
     const content = {
       intro: this.intro,
       logo: this.logo,
-      title: this.currentMovieTemplate.title,
-      subtitle: this.currentMovieTemplate.subtitle,
-      body: this.currentMovieTemplate.body
+      title: this.selectedMovieTemplate.title,
+      subtitle: this.selectedMovieTemplate.subtitle,
+      body: this.selectedMovieTemplate.body
     }
     this.router.navigate(['/generated-crawl'], {queryParams: content});
   }
@@ -136,6 +130,10 @@ export class CreateCrawlComponent implements AfterViewInit {
     textArea.style.height = 'auto';
     textArea.style.height = `${textArea.scrollHeight}px`;
     console.log(textArea.style.height);
+  }
+
+  onMovieTemplateChange(): void {
+    this.selectedMovieTemplate = { ...this.currentMovieTemplate };
   }
 }
 
