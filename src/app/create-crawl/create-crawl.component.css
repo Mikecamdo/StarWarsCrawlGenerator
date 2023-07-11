@@ -40,7 +40,9 @@ textarea {
       -1px 1px 0 #FFE81F,
       1px 1px 0 #FFE81F;
     font-family: StarJedi;
-    line-height: 2rem;
+    line-height: .8em;
+    font-size: 5em;
+    height: auto;
 }
 
 textarea::-webkit-scrollbar {
@@ -56,4 +58,8 @@ textarea::-webkit-scrollbar {
 
 .alert-warning {
     --bs-alert-border-color: #FFE81F;
+}
+
+.max-size {
+    max-width: 500px;
 }

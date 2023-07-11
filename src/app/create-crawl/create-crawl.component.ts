@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,8 +7,24 @@ import { Router } from '@angular/router';
   templateUrl: './create-crawl.component.html',
   styleUrls: ['./create-crawl.component.css']
 })
-export class CreateCrawlComponent {
+export class CreateCrawlComponent implements AfterViewInit {
+  @ViewChild('logoTextArea') logoTextArea!: ElementRef;
+  @ViewChild('logoTextAreaNgModel') logoTextAreaNgModel!: NgModel;
+
   constructor(private router: Router) { }
+
+  ngAfterViewInit(): void {
+      this.resizeTextAreaOnInit();
+  }
+
+  resizeTextAreaOnInit(): void {
+    const textArea = this.logoTextArea.nativeElement;
+    const modelValue = this.logoTextAreaNgModel.model;
+    textArea.value = this.logo;
+    textArea.style.height = 'auto';
+    textArea.style.height = `${textArea.scrollHeight + 20}px`;
+    console.log(textArea.style.height);
+  }
 
   intro: string = 'A long time ago in a galaxy far, far away...';
   logo: string = 'STAR\nWARS';
@@ -109,6 +126,13 @@ export class CreateCrawlComponent {
       body: this.currentMovieTemplate.body
     }
     this.router.navigate(['/generated-crawl'], {queryParams: content});
+  }
+
+  resizeTextArea(event: Event): void {
+    const textArea = event.target as HTMLTextAreaElement;
+    textArea.style.height = 'auto';
+    textArea.style.height = `${textArea.scrollHeight}px`;
+    console.log(textArea.style.height);
   }
 }
 

@@ -6,15 +6,15 @@
     </div>
     <div class="row">
         <div class="column">
-            <div>
+            <div class="mx-auto max-size">
                 <label for="intro" class="form-label">Intro</label>
                 <input type="text" class="form-control mb-4" id="intro" name="intro" [(ngModel)]="intro">
             </div>
-            <div>
+            <div class="mx-auto max-size">
                 <label for="logo" class="form-label">Logo</label>
                 <!-- <input type="text" class="form-control mb-4 fs-1" id="logo" name="logo" [(ngModel)]="logo"> -->
-                <textarea type="text" class="form-control mb-4 fs-1" id="logo" name="logo"
-                    [(ngModel)]="logo" rows="2">
+                <textarea #logoTextArea type="text" class="form-control mb-4 text-center" id="logo" name="logo"
+                    [(ngModel)]="logo" #logoTextAreaNgModel rows="2" (input)="resizeTextArea($event)">
                     </textarea>
             </div>
             <div *ngIf="showInvalidMessage()">
