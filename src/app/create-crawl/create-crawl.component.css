@@ -58,7 +58,7 @@ textarea::-webkit-scrollbar {
 }
 
 .alert-warning {
-    --bs-alert-border-color: #FFE81F;
+    --bs-alert-border-color: #dee2e6;
 }
 
 .max-size {

@@ -10,15 +10,14 @@
                 <label for="intro" class="form-label">Intro</label>
                 <input type="text" class="form-control mb-4" id="intro" name="intro" [(ngModel)]="intro">
             </div>
+            <div *ngIf="showInvalidMessage()" class="mx-auto max-size">
+                <div class="alert alert-warning">The logo can only have 2 lines!</div>
+            </div>
             <div class="mx-auto max-size">
                 <label for="logo" class="form-label">Logo</label>
-                <!-- <input type="text" class="form-control mb-4 fs-1" id="logo" name="logo" [(ngModel)]="logo"> -->
                 <textarea #logoTextArea type="text" class="form-control mb-4 text-center" id="logo" name="logo"
                     [(ngModel)]="logo" #logoTextAreaNgModel rows="2" (input)="resizeTextArea($event)">
                     </textarea>
-            </div>
-            <div *ngIf="showInvalidMessage()">
-                <div class="alert alert-warning">The logo can only have 2 lines!</div>
             </div>
             <div class="mx-auto max-size-two">
                 <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select">
