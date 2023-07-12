@@ -95,7 +95,7 @@ export class CreateCrawlComponent {
   selectedMovieTemplate: MovieTemplate = { ...this.movieTemplates[0] };
 
   disableButton(): boolean {
-    return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle || this.showInvalidMessage(1) || this.showInvalidMessage(2);
+    return !this.intro || !this.logo || !this.selectedMovieTemplate.body || !this.selectedMovieTemplate.title || !this.selectedMovieTemplate.subtitle || this.showInvalidMessage(1) || this.showInvalidMessage(2);
   }
 
   showInvalidMessage(type: number): boolean {
