@@ -100,18 +100,22 @@ export class CreateCrawlComponent implements AfterViewInit {
       '\nMeanwhile, Supreme Leader KYLO REN rages in search of the phantom Emperor, determined to destroy any threat to his power....'
     }
   ]
-  intro: string = 'A long time ago in a galaxy far, far away...';
+  intro: string = 'A long time ago in a galaxy far,\nfar away...';
   logo: string = 'STAR\nWARS';
 
   currentMovieTemplate: MovieTemplate = this.movieTemplates[0];
   selectedMovieTemplate: MovieTemplate = { ...this.movieTemplates[0] };
 
   disableButton(): boolean {
-    return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle || this.showInvalidMessage();
+    return !this.intro || !this.logo || !this.currentMovieTemplate.body || !this.currentMovieTemplate.title || !this.currentMovieTemplate.subtitle || this.showInvalidMessage(1) || this.showInvalidMessage(2);
   }
 
-  showInvalidMessage(): boolean {
-    return this.logo.split('\n').length > 2;
+  showInvalidMessage(type: number): boolean {
+    if (type === 1) {
+      return this.intro.split('\n').length > 2;
+    } else { //type === 2
+      return this.logo.split('\n').length > 2;
+    }
   }
 
   generateCrawl(): void {

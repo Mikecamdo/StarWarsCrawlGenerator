@@ -7,7 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./generated-crawl.component.css']
 })
 export class GeneratedCrawlComponent implements OnDestroy, OnInit {
-  intro: string = '';
+  topIntro: string = '';
+  bottomIntro: string = '';
   topLogo: string = '';
   bottomLogo: string = '';
   title: string = '';
@@ -23,7 +24,9 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.intro = params['intro'];
+      let introParts: string[] = params['intro'].split('\n');
+      this.topIntro = introParts[0];
+      this.bottomIntro = introParts[1];
 
       let logoParts: string[] = params['logo'].split('\n'); //FIXME need to limit user to entering 2 lines
       this.topLogo = logoParts[0];

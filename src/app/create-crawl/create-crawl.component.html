@@ -6,18 +6,23 @@
     </div>
     <div class="row">
         <div class="column">
+            <div *ngIf="showInvalidMessage(1)" class="mx-auto max-size">
+                <div class="alert alert-warning blue-text">The intro can only have 2 lines!</div>
+            </div>
             <div class="mx-auto max-size">
                 <label for="intro" class="form-label">Intro</label>
-                <input type="text" class="form-control mb-4" id="intro" name="intro" [(ngModel)]="intro">
+                <textarea type="text" class="form-control mb-4" id="intro" name="intro"
+                    [(ngModel)]="intro" rows="2">
+                </textarea>
             </div>
-            <div *ngIf="showInvalidMessage()" class="mx-auto max-size">
+            <div *ngIf="showInvalidMessage(2)" class="mx-auto max-size">
                 <div class="alert alert-warning">The logo can only have 2 lines!</div>
             </div>
             <div class="mx-auto max-size">
                 <label for="logo" class="form-label">Logo</label>
-                <textarea #logoTextArea type="text" class="form-control mb-4 text-center" id="logo" name="logo"
-                    [(ngModel)]="logo" #logoTextAreaNgModel rows="2" (input)="resizeTextArea($event)">
-                    </textarea>
+                <textarea type="text" class="form-control mb-4 text-center" id="logo" name="logo"
+                    [(ngModel)]="logo" rows="2">
+                </textarea>
             </div>
             <div class="mx-auto max-size-two">
                 <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select">
@@ -38,7 +43,7 @@
                 <label for="body" class="form-label">Body</label>
                 <textarea type="text" class="form-control mb-4" id="body" name="body"
                     [(ngModel)]="selectedMovieTemplate.body" rows="10">
-                    </textarea>
+                </textarea>
             </div>
         </div>
     </div>

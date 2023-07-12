@@ -32,14 +32,18 @@ textarea {
     color: rgb(75, 213, 238);
 }
 
+.blue-text {
+    color: rgb(75, 213, 238);
+}
+
 #logo {
     color: black;
     caret-color: #FFE81F;
     text-shadow:
-      -1px -1px 0 #FFE81F, /* Adjust the offset and color for the outline */
-      1px -1px 0 #FFE81F,
-      -1px 1px 0 #FFE81F,
-      1px 1px 0 #FFE81F;
+      -2px -2px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      2px -2px 0 #FFE81F,
+      -2px 2px 0 #FFE81F,
+      2px 2px 0 #FFE81F;
     font-family: StarJedi;
     line-height: .8em;
     font-size: 5em;
@@ -73,4 +77,8 @@ textarea::-webkit-scrollbar {
     border-color: #FFE81F;
     box-shadow: none !important;
     outline: none !important;
+}
+
+#logo {
+    height: 175px;
 }
