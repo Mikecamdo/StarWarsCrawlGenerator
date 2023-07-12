@@ -1,5 +1,4 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,24 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './create-crawl.component.html',
   styleUrls: ['./create-crawl.component.css']
 })
-export class CreateCrawlComponent implements AfterViewInit {
-  @ViewChild('logoTextArea') logoTextArea!: ElementRef;
-  @ViewChild('logoTextAreaNgModel') logoTextAreaNgModel!: NgModel;
+export class CreateCrawlComponent {
 
   constructor(private router: Router) { }
-
-  ngAfterViewInit(): void {
-      this.resizeTextAreaOnInit();
-  }
-
-  resizeTextAreaOnInit(): void {
-    const textArea = this.logoTextArea.nativeElement;
-    const modelValue = this.logoTextAreaNgModel.model;
-    textArea.value = this.logo;
-    textArea.style.height = 'auto';
-    textArea.style.height = `${textArea.scrollHeight + 20}px`;
-    console.log(textArea.style.height);
-  }
 
   movieTemplates: MovieTemplate[] = [
     {

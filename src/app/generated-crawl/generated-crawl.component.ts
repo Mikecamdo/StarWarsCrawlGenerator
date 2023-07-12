@@ -28,13 +28,9 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
       this.topIntro = introParts[0];
       this.bottomIntro = introParts[1];
 
-      let logoParts: string[] = params['logo'].split('\n'); //FIXME need to limit user to entering 2 lines
+      let logoParts: string[] = params['logo'].split('\n');
       this.topLogo = logoParts[0];
       this.bottomLogo = logoParts[1];
-
-      console.log("The stuff:");
-      console.log(this.topLogo);
-      console.log(this.bottomLogo);
 
       this.title = params['title'];
       this.subtitle = params['subtitle'];
