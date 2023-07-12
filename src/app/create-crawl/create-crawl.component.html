@@ -9,43 +9,53 @@
             <div *ngIf="showInvalidMessage(1)" class="mx-auto max-size">
                 <div class="alert alert-warning blue-text">The intro can only have 2 lines!</div>
             </div>
+
             <div class="mx-auto max-size">
                 <textarea type="text" class="form-control mb-4" id="intro" name="intro"
-                    [(ngModel)]="intro" rows="2">
+                    [(ngModel)]="intro" rows="2" [style.color]="introColor">
                 </textarea>
             </div>
+
             <div *ngIf="showInvalidMessage(2)" class="mx-auto max-size">
                 <div class="alert alert-warning">The logo can only have 2 lines!</div>
             </div>
-
 
             <div class="mx-auto max-size">
                 <textarea type="text" class="form-control mb-4 text-center logoText" id="logo" name="logo"
                     [(ngModel)]="logo" rows="2" [ngStyle]="changeTextShadowColor()">
                 </textarea>
             </div>
+
             <div class="text-center d-flex align-items-center justify-content-center my-4">
+                <input type="color" [(ngModel)]="introColor">
+                <span [style.color]="introColor" class="me-5">Intro Color</span>
+
                 <input type="color" [(ngModel)]="logoColor" (input)="changeTextShadowColor()">
-                <span  [style.color]="logoColor">Logo Color</span>
+                <span [style.color]="logoColor">Logo Color</span>
+
+                <input type="color" [(ngModel)]="textColor" (input)="changeTextShadowColor()" class="ms-5">
+                <span [style.color]="textColor">Text Color</span>
             </div>
 
-
             <div class="mx-auto max-size-two">
-                <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select">
-                    <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie">{{movie.title}}</option>
+                <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select" [style.color]="textColor">
+                    <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie" [style.color]="textColor">{{movie.title}}</option>
                 </select>
             </div>
+
             <div class="mx-auto max-size-two mt-4">
                 <input type="text" class="form-control mb-4" id="title" name="title"
-                    [(ngModel)]="selectedMovieTemplate.title">
+                    [(ngModel)]="selectedMovieTemplate.title" [style.color]="textColor">
             </div>
+
             <div class="mx-auto max-size-two">
                 <input type="text" class="form-control mb-4" id="subtitle" name="subtitle"
-                    [(ngModel)]="selectedMovieTemplate.subtitle">
+                    [(ngModel)]="selectedMovieTemplate.subtitle" [style.color]="textColor">
             </div>
+            
             <div class="mx-auto max-size-two">
                 <textarea type="text" class="form-control mb-4" id="body" name="body"
-                    [(ngModel)]="selectedMovieTemplate.body" rows="10">
+                    [(ngModel)]="selectedMovieTemplate.body" rows="10" [style.color]="textColor">
                 </textarea>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="intro w-100 mx-auto d-flex justify-content-center">
+    <div class="intro w-100 mx-auto d-flex justify-content-center" [style.color]="introColor">
         <div>
             <div>
                 {{topIntro}}
@@ -21,11 +21,11 @@
 
     <div id="board">
         <div id="content">
-            <p id="title">{{title}}</p>
-            <p id="subtitle">{{subtitle}}</p>
+            <p id="title" [style.color]="textColor">{{title}}</p>
+            <p id="subtitle" [style.color]="textColor">{{subtitle}}</p>
             <br />
             <div *ngFor="let paragraph of body">
-                <p>{{paragraph}}</p>
+                <p [style.color]="textColor">{{paragraph}}</p>
                 <br />
             </div>
         </div>

@@ -15,7 +15,9 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   subtitle: string = '';
   body: string[] = [];
 
+  introColor: string = '';
   logoColor: string = '';
+  textColor: string = '';
 
   audio: HTMLAudioElement;
   audioUrl: string = 'https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3';
@@ -37,7 +39,9 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
       this.title = params['title'];
       this.subtitle = params['subtitle'];
 
+      this.introColor = params['introColor'];
       this.logoColor = params['logoColor'];
+      this.textColor = params['textColor'];
 
       let paragraphs: string[] = params['body'].split('\n');
       paragraphs.forEach((paragraph) => {

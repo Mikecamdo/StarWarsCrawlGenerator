@@ -87,7 +87,9 @@ export class CreateCrawlComponent {
   intro: string = 'A long time ago in a galaxy far,\nfar away...';
   logo: string = 'STAR\nWARS';
 
+  introColor: string = '#4BD5EE';
   logoColor: string = '#FFE81F';
+  textColor: string = '#FFE81F';
 
   currentMovieTemplate: MovieTemplate = this.movieTemplates[0];
   selectedMovieTemplate: MovieTemplate = { ...this.movieTemplates[0] };
@@ -128,7 +130,9 @@ export class CreateCrawlComponent {
       title: this.selectedMovieTemplate.title,
       subtitle: this.selectedMovieTemplate.subtitle,
       body: this.selectedMovieTemplate.body,
-      logoColor: this.logoColor
+      introColor: this.introColor,
+      logoColor: this.logoColor,
+      textColor: this.textColor
     }
     this.router.navigate(['/generated-crawl'], {queryParams: content});
   }
