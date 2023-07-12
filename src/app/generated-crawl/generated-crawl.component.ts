@@ -15,6 +15,8 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   subtitle: string = '';
   body: string[] = [];
 
+  logoColor: string = '';
+
   audio: HTMLAudioElement;
   audioUrl: string = 'https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3';
 
@@ -35,6 +37,8 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
       this.title = params['title'];
       this.subtitle = params['subtitle'];
 
+      this.logoColor = params['logoColor'];
+
       let paragraphs: string[] = params['body'].split('\n');
       paragraphs.forEach((paragraph) => {
         if (paragraph) { //only adds paragraph if it has content
@@ -48,5 +52,11 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   ngOnDestroy(): void {
       this.audio.pause();
       this.audio.currentTime = 0;
+  }
+
+  getLogoColor() {
+    return {
+      'text-shadow': `-0.5px -0.5px 0 ${this.logoColor}, 0.5px -0.5px 0 ${this.logoColor}, -0.5px 0.5px 0 ${this.logoColor}, 0.5px 0.5px 0 ${this.logoColor}`,
+    };
   }
 }

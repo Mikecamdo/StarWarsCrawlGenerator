@@ -10,7 +10,6 @@
                 <div class="alert alert-warning blue-text">The intro can only have 2 lines!</div>
             </div>
             <div class="mx-auto max-size">
-                <label for="intro" class="form-label">Intro</label>
                 <textarea type="text" class="form-control mb-4" id="intro" name="intro"
                     [(ngModel)]="intro" rows="2">
                 </textarea>
@@ -18,29 +17,33 @@
             <div *ngIf="showInvalidMessage(2)" class="mx-auto max-size">
                 <div class="alert alert-warning">The logo can only have 2 lines!</div>
             </div>
+
+
             <div class="mx-auto max-size">
-                <label for="logo" class="form-label">Logo</label>
-                <textarea type="text" class="form-control mb-4 text-center" id="logo" name="logo"
-                    [(ngModel)]="logo" rows="2">
+                <textarea type="text" class="form-control mb-4 text-center logoText" id="logo" name="logo"
+                    [(ngModel)]="logo" rows="2" [ngStyle]="changeTextShadowColor()">
                 </textarea>
             </div>
+            <div class="text-center d-flex align-items-center justify-content-center my-4">
+                <input type="color" [(ngModel)]="logoColor" (input)="changeTextShadowColor()">
+                <span  [style.color]="logoColor">Logo Color</span>
+            </div>
+
+
             <div class="mx-auto max-size-two">
                 <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select">
                     <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie">{{movie.title}}</option>
                 </select>
             </div>
-            <div class="mx-auto max-size-two">
-                <label for="title" class="form-label">Title</label>
+            <div class="mx-auto max-size-two mt-4">
                 <input type="text" class="form-control mb-4" id="title" name="title"
                     [(ngModel)]="selectedMovieTemplate.title">
             </div>
             <div class="mx-auto max-size-two">
-                <label for="subtitle" class="form-label">Subtitle</label>
                 <input type="text" class="form-control mb-4" id="subtitle" name="subtitle"
                     [(ngModel)]="selectedMovieTemplate.subtitle">
             </div>
             <div class="mx-auto max-size-two">
-                <label for="body" class="form-label">Body</label>
                 <textarea type="text" class="form-control mb-4" id="body" name="body"
                     [(ngModel)]="selectedMovieTemplate.body" rows="10">
                 </textarea>

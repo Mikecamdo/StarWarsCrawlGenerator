@@ -87,6 +87,8 @@ export class CreateCrawlComponent {
   intro: string = 'A long time ago in a galaxy far,\nfar away...';
   logo: string = 'STAR\nWARS';
 
+  logoColor: string = '#FFE81F';
+
   currentMovieTemplate: MovieTemplate = this.movieTemplates[0];
   selectedMovieTemplate: MovieTemplate = { ...this.movieTemplates[0] };
 
@@ -102,17 +104,6 @@ export class CreateCrawlComponent {
     }
   }
 
-  generateCrawl(): void {
-    const content = {
-      intro: this.intro,
-      logo: this.logo,
-      title: this.selectedMovieTemplate.title,
-      subtitle: this.selectedMovieTemplate.subtitle,
-      body: this.selectedMovieTemplate.body
-    }
-    this.router.navigate(['/generated-crawl'], {queryParams: content});
-  }
-
   resizeTextArea(event: Event): void {
     const textArea = event.target as HTMLTextAreaElement;
     textArea.style.height = 'auto';
@@ -123,9 +114,27 @@ export class CreateCrawlComponent {
   onMovieTemplateChange(): void {
     this.selectedMovieTemplate = { ...this.currentMovieTemplate };
   }
+
+  changeTextShadowColor() {
+    return {
+      'text-shadow': `-2px -2px 0 ${this.logoColor}, 2px -2px 0 ${this.logoColor}, -2px 2px 0 ${this.logoColor}, 2px 2px 0 ${this.logoColor}`,
+    };
+  }
+
+  generateCrawl(): void {
+    const content = {
+      intro: this.intro,
+      logo: this.logo,
+      title: this.selectedMovieTemplate.title,
+      subtitle: this.selectedMovieTemplate.subtitle,
+      body: this.selectedMovieTemplate.body,
+      logoColor: this.logoColor
+    }
+    this.router.navigate(['/generated-crawl'], {queryParams: content});
+  }
 }
 
-interface MovieTemplate {
+interface MovieTemplate { //FIXME move to its own file??
   title: string;
   subtitle: string;
   body: string;

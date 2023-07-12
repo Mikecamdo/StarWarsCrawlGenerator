@@ -40,7 +40,7 @@ textarea {
     color: black;
     caret-color: #FFE81F;
     text-shadow:
-      -2px -2px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      -2px -2px 0 #FFE81F,
       2px -2px 0 #FFE81F,
       -2px 2px 0 #FFE81F,
       2px 2px 0 #FFE81F;
