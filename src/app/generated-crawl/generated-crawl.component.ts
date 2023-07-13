@@ -68,7 +68,7 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
 
   getLogoColor() {
     return {
-      'text-shadow': `-0.5px -0.5px 0 ${this.logoColor}, 0.5px -0.5px 0 ${this.logoColor}, -0.5px 0.5px 0 ${this.logoColor}, 0.5px 0.5px 0 ${this.logoColor}`,
+      'text-shadow': `-2px -2px 0 ${this.logoColor}, 2px -2px 0 ${this.logoColor}, -2px 2px 0 ${this.logoColor}, 2px 2px 0 ${this.logoColor}`,
     };
   }
 

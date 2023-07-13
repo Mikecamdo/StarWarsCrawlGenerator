@@ -62,21 +62,22 @@ body {
       -0.5px 0.5px 0 #FFE81F,
       0.5px 0.5px 0 #FFE81F;
     font-family: StarJedi;
+    font-size: 4rem;
 }
 
 .shrink-size {
-    max-height: .8rem;
+    max-height: 3.3rem;
 }
 
 @keyframes logo {
     0% {
         width: 50%;        
-        transform: scale(15);
+        transform: scale(4); /* Can probably play around and make this value higher*/
         opacity: 1;
     }
     50% {
         opacity: 1;
-        width: 50%;      
+        width: 50%;
     }
     100% {
         opacity: 0;
