@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="intro w-100 mx-auto d-flex justify-content-center" [style.color]="introColor">
+    <div class="intro w-100 d-flex justify-content-center" [style.color]="introColor" [ngClass]="getClassBasedOnWidth(1)">
         <div>
             <div>
                 {{topIntro}}
@@ -11,15 +11,15 @@
     </div>
 
     <div class="logo text-center" [ngStyle]="getLogoColor()">
-        <div class="shrink-size">
+        <div [ngClass]="getClassBasedOnWidth(2)" class="shrink-size">
             {{topLogo}}
         </div>
-        <div class="shrink-size">
+        <div [ngClass]="getClassBasedOnWidth(2)" class="shrink-size">
             {{bottomLogo}}
         </div>
     </div>
 
-    <div id="board">
+    <div id="board" [ngClass]="getClassBasedOnWidth(3)">
         <div id="content">
             <p id="title" [style.color]="textColor">{{title}}</p>
             <p id="subtitle" [style.color]="textColor">{{subtitle}}</p>

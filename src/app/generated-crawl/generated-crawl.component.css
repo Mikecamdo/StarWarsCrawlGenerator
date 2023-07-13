@@ -17,12 +17,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
+    text-align: justify;
 
     animation: intro 6s ease-out 1s;
     color: rgb(75, 213, 238);
     font-weight: 400;
-    font-size: 300%;
+    font-size: 2rem;
     opacity: 0;
+    overflow: hidden;
 }
 
 @keyframes intro {
@@ -47,7 +50,7 @@ body {
     position: fixed;
     top: 40%;
     left: 25%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     z-index: 9999;
     margin: auto;
     animation: logo 9s ease-out 9s; /* The second value affects when it comes in, should be 9s */
@@ -89,34 +92,38 @@ p {
 /* Set the font, lean the board, position it */
 #board {
     font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    transform: perspective(300px) rotateX(25deg);
+    transform: perspective(250px) rotateX(25deg);
     transform-origin: 50% 100%;
     text-align: justify;
-    position: absolute;
+    position: fixed;
     margin-left: -9em;
     font-weight: bold;
     overflow: hidden;
-    font-size: 350%;
+    /* font-size: 1.3rem; */
+    /* font-size: 3rem; */
     height: 50em;
     width: 18em;
     bottom: 0;
     left: 50%;
+    z-index: 1;
 }
 
 #board:after {
-    position: absolute;
+    position: fixed;
     content: ' ';
-    bottom: 60%;
+    bottom: 80%;
     left: 0;
     right: 0;
     top: 0;
+    z-index: 1;
 }
 
 /* Set the scrolling animation and position it */
 #content { /* FIXME linear determines how long before the crawl text appears */
-    animation: scroll 180s linear 16s; /* FIXME change this to affect scroll speed */
-    position: absolute;
+    animation: scroll 185s linear 16s; /* FIXME change this to affect scroll speed */
+    position: fixed;
     top: 100%;
+    z-index: 1;
 }
 
 #title,
@@ -132,4 +139,40 @@ p {
     100% {
         top: -170%;
     }
+}
+
+.intro-small-width {
+    font-size: 1.3rem;
+}
+
+.intro-medium-width {
+    font-size: 2rem;
+}
+
+.intro-large-width {
+    font-size: 3rem;
+}
+
+/* .logo-small-width { FIXME might not need this
+    max-height: .8rem;
+}
+
+.logo-medium-width {
+    max-height: .8rem;
+}
+
+.logo-large-width {
+    max-height: .8rem;
+} */
+
+.text-small-width {
+    font-size: 1.3rem;
+}
+
+.text-medium-width {
+    font-size: 2rem;
+}
+
+.text-large-width {
+    font-size: 3rem;
 }

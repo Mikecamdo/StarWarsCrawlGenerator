@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -22,8 +22,16 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   audio: HTMLAudioElement;
   audioUrl: string = 'https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3';
 
+  screenWidth: number;
+
   constructor(private route: ActivatedRoute) {
     this.audio = new Audio(this.audioUrl);
+    this.screenWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    this.screenWidth = window.innerWidth;
   }
 
   ngOnInit(): void {
@@ -62,5 +70,27 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
     return {
       'text-shadow': `-0.5px -0.5px 0 ${this.logoColor}, 0.5px -0.5px 0 ${this.logoColor}, -0.5px 0.5px 0 ${this.logoColor}, 0.5px 0.5px 0 ${this.logoColor}`,
     };
+  }
+
+  getClassBasedOnWidth(section: number) {
+    if (section === 1) {
+      return {
+        'intro-small-width': this.screenWidth < 570,
+        'intro-medium-width': this.screenWidth >= 570 && this.screenWidth < 850,
+        'intro-large-width': this.screenWidth >= 850
+      };  
+    } else if (section === 2) {
+      return {
+        'logo-small-width': this.screenWidth < 570,
+        'logo-medium-width': this.screenWidth >= 570 && this.screenWidth < 850,
+        'logo-large-width': this.screenWidth >= 850
+      };  
+    } else { //if section ===3
+      return {
+        'text-small-width': this.screenWidth < 570,
+        'text-medium-width': this.screenWidth >= 570 && this.screenWidth < 850,
+        'text-large-width': this.screenWidth >= 850
+      };  
+    }
   }
 }
