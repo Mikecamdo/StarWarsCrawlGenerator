@@ -24,6 +24,8 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
 
   screenWidth: number;
 
+  beginAnimation: boolean = false;
+
   constructor(private route: ActivatedRoute) {
     this.audio = new Audio(this.audioUrl);
     this.screenWidth = window.innerWidth;
@@ -56,8 +58,7 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
         if (paragraph) { //only adds paragraph if it has content
           this.body.push(paragraph);
         }
-      })
-      this.audio.play();
+      });
     });
   }
 
@@ -92,5 +93,10 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
         'text-large-width': this.screenWidth >= 850
       };  
     }
+  }
+
+  startCrawl(): void {
+    this.beginAnimation = true;
+    this.audio.play();
   }
 }

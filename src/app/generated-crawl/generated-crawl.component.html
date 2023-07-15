@@ -1,4 +1,7 @@
-<div class="container">
+<div class="d-flex justify-content-center" *ngIf="!beginAnimation">
+    <button class="btn btn-primary" (click)="startCrawl()">Play</button>
+</div>
+<div class="container" *ngIf="beginAnimation">
     <div class="intro w-100 d-flex justify-content-center" [style.color]="introColor" [ngClass]="getClassBasedOnWidth(1)">
         <div>
             <div>
