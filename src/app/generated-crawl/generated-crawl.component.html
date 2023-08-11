@@ -2,7 +2,7 @@
     <button class="btn btn-primary" (click)="startCrawl()">Play</button>
 </div>
 
-<div [@fadeInOut] class="container" *ngIf="beginAnimation && !animationOver">
+<div [@fadeOut] class="container" *ngIf="beginAnimation && !animationOver">
     <div [class.intro]="beginAnimation" class="w-100 d-flex justify-content-center" [style.color]="introColor" [ngClass]="getClassBasedOnWidth(1)">
         <div>
             <div>
@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<div [@fadeInOut] *ngIf="animationOver">
+<div [@fadeIn] *ngIf="animationOver">
     <div class="d-flex flex-column align-items-center">
         <button class="btn btn-primary" (click)="startCrawl()">Play Again</button>
     </div>

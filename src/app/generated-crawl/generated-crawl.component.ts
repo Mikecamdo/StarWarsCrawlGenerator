@@ -7,11 +7,13 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './generated-crawl.component.html',
   styleUrls: ['./generated-crawl.component.css'],
   animations: [
-    trigger('fadeInOut', [
+    trigger('fadeIn', [
       transition(':enter', [
         style({ opacity: 0 }),
         animate(2000, style({ opacity: 1 }))
-      ]),
+      ])
+    ]),
+    trigger('fadeOut', [
       transition(':leave', [
         animate(2000, style({ opacity: 0 }))
       ])
