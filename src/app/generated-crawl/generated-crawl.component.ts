@@ -41,14 +41,20 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   beginAnimation: boolean = false;
   animationOver: boolean = false;
 
+  logoBig: boolean = false;
+  logoMedium: boolean = false;
+  logoSmall: boolean = false;
+
   constructor(private route: ActivatedRoute) {
     this.audio = new Audio(this.audioUrl);
     this.screenWidth = window.innerWidth;
+    this.setLogoSize();
   }
 
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
     this.screenWidth = window.innerWidth;
+    this.setLogoSize();
   }
 
   ngOnInit(): void {
@@ -97,20 +103,16 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
       };
     } else if (section === 2) {
       return {
-        'logo-small-width': this.screenWidth < 570,
-        'logo-medium-width': this.screenWidth >= 570 && this.screenWidth < 850,
-        'logo-large-width': this.screenWidth >= 850
-      };
-    } else { //if section ===3
-      return {
         'text-small-width': this.screenWidth < 570,
         'text-medium-width': this.screenWidth >= 570 && this.screenWidth < 850,
         'text-large-width': this.screenWidth >= 850
       };  
     }
+    return;
   }
 
   startCrawl(): void {
+    this.setLogoSize();
     this.beginAnimation = true;
     this.animationOver = false;
     this.audio.addEventListener('ended', this.audioEnded);
@@ -120,5 +122,21 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   audioEnded = (): void => {
     this.animationOver = true;
     this.audio.removeEventListener('ended', this.audioEnded);
+  }
+
+  setLogoSize(): void {
+    if (this.screenWidth >= 950) {
+      this.logoBig = true;
+      this.logoMedium = false;
+      this.logoSmall = false;
+    } else if (this.screenWidth >= 600) {
+      this.logoBig = false;
+      this.logoMedium = true;
+      this.logoSmall = false;
+    } else {
+      this.logoBig = false;
+      this.logoMedium = false;
+      this.logoSmall = true;
+    }
   }
 }

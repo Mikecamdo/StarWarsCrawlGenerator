@@ -44,13 +44,13 @@ body {
     }
 }
 
-.logo {    
+.logo-big {    
     position: fixed;
     top: 35%;
     left: 25%;
     z-index: 9999;
     margin: auto;
-    animation: logo 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
+    animation: logo-big 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
     opacity: 0;
     color: black;
     text-shadow:
@@ -62,7 +62,7 @@ body {
     font-size: 4rem;
 }
 
-@keyframes logo {
+@keyframes logo-big {
     0% {
         opacity: 1;
         width: 50%;        
@@ -77,6 +77,78 @@ body {
         opacity: 0;
         width: 50%;
         transform: scale(0.0001);
+    }
+}
+
+.logo-medium {    
+    position: fixed;
+    top: 35%;
+    left: 25%;
+    z-index: 9999;
+    margin: auto;
+    animation: logo-medium 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
+    opacity: 0;
+    color: black;
+    text-shadow:
+      -0.5px -0.5px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      0.5px -0.5px 0 #FFE81F,
+      -0.5px 0.5px 0 #FFE81F,
+      0.5px 0.5px 0 #FFE81F;
+    font-family: StarJedi;
+    font-size: 4rem;
+}
+
+@keyframes logo-medium {
+    0% {
+        opacity: 1;
+        width: 50%;        
+        transform: scale(3.5);
+    }
+    50% {
+        opacity: 1;
+        width: 50%;
+        transform: scale(0.1);
+    }
+    100% {
+        opacity: 0;
+        width: 50%;
+        transform: scale(0.005);
+    }
+}
+
+.logo-small {    
+    position: fixed;
+    top: 35%;
+    left: 25%;
+    z-index: 9999;
+    margin: auto;
+    animation: logo-small 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
+    opacity: 0;
+    color: black;
+    text-shadow:
+      -0.5px -0.5px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      0.5px -0.5px 0 #FFE81F,
+      -0.5px 0.5px 0 #FFE81F,
+      0.5px 0.5px 0 #FFE81F;
+    font-family: StarJedi;
+    font-size: 4rem;
+}
+
+@keyframes logo-small {
+    0% {
+        opacity: 1;
+        width: 50%;        
+        transform: scale(2);
+    }
+    50% {
+        opacity: 1;
+        width: 50%;
+        transform: scale(0.09);
+    }
+    100% {
+        opacity: 0;
+        width: 50%;
+        transform: scale(0.00002);
     }
 }
 

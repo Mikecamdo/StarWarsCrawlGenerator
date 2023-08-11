@@ -14,16 +14,20 @@
         </div>
     </div>
 
-    <div [class.logo]="beginAnimation" class="text-center" [ngStyle]="getLogoColor()">
-        <div [ngClass]="getClassBasedOnWidth(2)" class="shrink-size">
+    <div [class.logo-big]="beginAnimation && logoBig" 
+         [class.logo-medium]="beginAnimation && logoMedium"
+         [class.logo-small]="beginAnimation && logoSmall"
+         class="text-center" 
+         [ngStyle]="getLogoColor()">
+        <div class="shrink-size">
             {{topLogo}}
         </div>
-        <div [ngClass]="getClassBasedOnWidth(2)" class="shrink-size">
+        <div class="shrink-size">
             {{bottomLogo}}
         </div>
     </div>
 
-    <div id="board" [ngClass]="getClassBasedOnWidth(3)">
+    <div id="board" [ngClass]="getClassBasedOnWidth(2)">
         <div [class.content]="beginAnimation">
             <p id="title" [style.color]="textColor">{{title}}</p>
             <p id="subtitle" [style.color]="textColor">{{subtitle}}</p>
