@@ -179,3 +179,7 @@ p {
     background-color: #FFE81F !important;
     color: black;
 }
+
+.btn-below {
+    margin-top: 1.5vh !important;
+}
