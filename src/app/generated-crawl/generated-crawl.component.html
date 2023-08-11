@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center" *ngIf="!beginAnimation">
     <button class="btn btn-primary" (click)="startCrawl()">Play</button>
 </div>
-<div class="container" *ngIf="beginAnimation">
-    <div class="intro w-100 d-flex justify-content-center" [style.color]="introColor" [ngClass]="getClassBasedOnWidth(1)">
+<div [@fadeInOut] class="container" *ngIf="beginAnimation && !animationOver">
+    <div [class.intro]="beginAnimation" class="w-100 d-flex justify-content-center" [style.color]="introColor" [ngClass]="getClassBasedOnWidth(1)">
         <div>
             <div>
                 {{topIntro}}
@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="logo text-center" [ngStyle]="getLogoColor()">
+    <div [class.logo]="beginAnimation" class="text-center" [ngStyle]="getLogoColor()">
         <div [ngClass]="getClassBasedOnWidth(2)" class="shrink-size">
             {{topLogo}}
         </div>
@@ -23,7 +23,7 @@
     </div>
 
     <div id="board" [ngClass]="getClassBasedOnWidth(3)">
-        <div id="content">
+        <div [class.content]="beginAnimation">
             <p id="title" [style.color]="textColor">{{title}}</p>
             <p id="subtitle" [style.color]="textColor">{{subtitle}}</p>
             <br />
@@ -33,4 +33,9 @@
             </div>
         </div>
     </div>
+</div>
+<div [@fadeInOut] class="d-flex justify-content-center" *ngIf="animationOver">
+    <button class="btn btn-primary" (click)="startCrawl()">Play Again</button>
+
+    <button class="btn btn-primary" [routerLink]="'/'">Back to Home</button>
 </div>

@@ -1,10 +1,22 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnDestroy, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-generated-crawl',
   templateUrl: './generated-crawl.component.html',
-  styleUrls: ['./generated-crawl.component.css']
+  styleUrls: ['./generated-crawl.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate(2000, style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate(2000, style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   topIntro: string = '';
@@ -25,6 +37,7 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   screenWidth: number;
 
   beginAnimation: boolean = false;
+  animationOver: boolean = false;
 
   constructor(private route: ActivatedRoute) {
     this.audio = new Audio(this.audioUrl);
@@ -97,6 +110,13 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
 
   startCrawl(): void {
     this.beginAnimation = true;
+    this.animationOver = false;
+    this.audio.addEventListener('ended', this.audioEnded);
     this.audio.play();
+  }
+
+  audioEnded = (): void => {
+    this.animationOver = true;
+    this.audio.removeEventListener('ended', this.audioEnded);
   }
 }
