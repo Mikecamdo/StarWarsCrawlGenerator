@@ -154,18 +154,6 @@ p {
     font-size: 3rem;
 }
 
-/* .logo-small-width { FIXME might not need this
-    max-height: .8rem;
-}
-
-.logo-medium-width {
-    max-height: .8rem;
-}
-
-.logo-large-width {
-    max-height: .8rem;
-} */
-
 .text-small-width {
     font-size: 1.3rem;
 }
@@ -176,4 +164,18 @@ p {
 
 .text-large-width {
     font-size: 3rem;
+}
+
+.btn.btn-primary {
+    margin-top: 46.86vh;
+    --bs-btn-border-color: #FFE81F;
+    color: #FFE81F;
+}
+
+.btn.btn-primary:hover {
+    margin-top: 46.86vh;
+    --bs-btn-border-color: #FFE81F;
+    --bs-btn-hover-border-color: #FFE81F;
+    background-color: #FFE81F !important;
+    color: black;
 }
