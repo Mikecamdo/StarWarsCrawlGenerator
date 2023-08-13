@@ -3,13 +3,6 @@ body {
     background-color: black;
 }
 
-.star {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background-color: white;
-}
-
 .intro {
     z-index: 9999;
     position: fixed;
@@ -50,11 +43,11 @@ body {
     left: 25%;
     z-index: 9999;
     margin: auto;
-    animation: logo-big 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
+    animation: logo-big 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s;
     opacity: 0;
     color: black;
     text-shadow:
-      -0.5px -0.5px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      -0.5px -0.5px 0 #FFE81F,
       0.5px -0.5px 0 #FFE81F,
       -0.5px 0.5px 0 #FFE81F,
       0.5px 0.5px 0 #FFE81F;
@@ -86,11 +79,11 @@ body {
     left: 25%;
     z-index: 9999;
     margin: auto;
-    animation: logo-medium 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
+    animation: logo-medium 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s;
     opacity: 0;
     color: black;
     text-shadow:
-      -0.5px -0.5px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      -0.5px -0.5px 0 #FFE81F,
       0.5px -0.5px 0 #FFE81F,
       -0.5px 0.5px 0 #FFE81F,
       0.5px 0.5px 0 #FFE81F;
@@ -122,11 +115,11 @@ body {
     left: 25%;
     z-index: 9999;
     margin: auto;
-    animation: logo-small 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s; /* The second value affects when it comes in, should be 9s */
+    animation: logo-small 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 9s;
     opacity: 0;
     color: black;
     text-shadow:
-      -0.5px -0.5px 0 #FFE81F, /* Adjust the offset and color for the outline */
+      -0.5px -0.5px 0 #FFE81F,
       0.5px -0.5px 0 #FFE81F,
       -0.5px 0.5px 0 #FFE81F,
       0.5px 0.5px 0 #FFE81F;
@@ -160,10 +153,23 @@ p {
     color: #FFE81F;
 }
 
-#board {
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+.small-angle {
+    transform: perspective(250px) rotateX(30deg);
+    transform-origin: 50% 100%;
+}
+
+.medium-angle {
+    transform: perspective(250px) rotateX(28.5deg);
+    transform-origin: 50% 100%;
+}
+
+.large-angle {
     transform: perspective(250px) rotateX(25deg);
     transform-origin: 50% 100%;
+}
+
+#board {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     text-align: justify;
     position: fixed;
     margin-left: -9em;
@@ -186,7 +192,6 @@ p {
     z-index: 1;
 }
 
-/* Set the scrolling animation and position it */
 .content {
     animation: scroll 185s linear 16s;
     position: fixed;

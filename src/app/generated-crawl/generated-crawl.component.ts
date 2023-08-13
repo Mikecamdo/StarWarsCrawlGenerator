@@ -113,6 +113,12 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
         'subtitle-medium-width': this.screenWidth >= 570 && this.screenWidth < 850,
         'subtitle-large-width': this.screenWidth >= 850
       };
+    } else if (section === 4) {
+      return {
+        'text-small-width small-angle': this.screenWidth < 570,
+        'text-medium-width medium-angle': this.screenWidth >= 570 && this.screenWidth < 850,
+        'text-large-width large-angle': this.screenWidth >= 850
+      };
     }
     return;
   }
