@@ -29,12 +29,12 @@
 
     <div id="board" [ngClass]="getClassBasedOnWidth(2)">
         <div [class.content]="beginAnimation">
-            <p id="title" [style.color]="textColor">{{title}}</p>
-            <p id="subtitle" [style.color]="textColor">{{subtitle}}</p>
-            <br />
-            <div *ngFor="let paragraph of body">
+            <p [ngClass]="getClassBasedOnWidth(2)" id="title" [style.color]="textColor">{{title}}</p>
+            <p [ngClass]="getClassBasedOnWidth(3)" id="subtitle" [style.color]="textColor">{{subtitle}}</p>
+            
+            <div class="mt-5" *ngFor="let paragraph of body">
                 <p [style.color]="textColor">{{paragraph}}</p>
-                <br />
+                <br/>
             </div>
         </div>
     </div>

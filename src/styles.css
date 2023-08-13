@@ -13,3 +13,8 @@
     font-family: 'StarJediOutline';
     src: local('StarJediOutline'), url('./assets/fonts/Starjhol.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Univers 39';
+    src: local('Univers 39'), url('./assets/fonts/univers-lt-std-39-thin-ultra-condensed.otf') format('opentype');
+}
