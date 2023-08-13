@@ -131,6 +131,10 @@ export class GeneratedCrawlComponent implements OnDestroy, OnInit {
   }
 
   setLogoSize(): void {
+    if (this.beginAnimation && !this.animationOver) { //if animation is in progress
+      return;
+    }
+
     if (this.screenWidth >= 950) {
       this.logoBig = true;
       this.logoMedium = false;
