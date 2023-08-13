@@ -12,7 +12,7 @@
 
             <div class="mx-auto max-size">
                 <textarea type="text" class="form-control mb-4" id="intro" name="intro"
-                    [(ngModel)]="intro" rows="2" [style.color]="introColor">
+                    [(ngModel)]="intro" rows="2" [ngStyle]="changeBorderColor(1)" (focus)="introFocus=true" (blur)="introFocus=false">
                 </textarea>
             </div>
 
@@ -21,8 +21,8 @@
             </div>
 
             <div class="mx-auto max-size">
-                <textarea type="text" class="form-control mb-4 text-center logoText" id="logo" name="logo"
-                    [(ngModel)]="logo" rows="2" [ngStyle]="changeTextShadowColor()">
+                <textarea type="text" class="form-control mb-4 text-center" id="logo" name="logo"
+                    [(ngModel)]="logo" rows="2" [ngStyle]="changeTextShadowColor()" (focus)="logoFocus=true" (blur)="logoFocus=false">
                 </textarea>
             </div>
 
@@ -38,24 +38,24 @@
             </div>
 
             <div class="mx-auto max-size-two">
-                <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select" [style.color]="textColor">
+                <select [(ngModel)]="currentMovieTemplate" (ngModelChange)="onMovieTemplateChange()" class="form-select" [ngStyle]="changeBorderColor(2)" (focus)="episodeSelectorFocus=true" (blur)="episodeSelectorFocus=false">
                     <option *ngFor="let movie of movieTemplates" selected [ngValue]="movie" [style.color]="textColor">{{movie.title}}</option>
                 </select>
             </div>
 
             <div class="mx-auto max-size-two mt-4">
                 <input type="text" class="form-control mb-4" id="title" name="title"
-                    [(ngModel)]="selectedMovieTemplate.title" [style.color]="textColor">
+                    [(ngModel)]="selectedMovieTemplate.title" [ngStyle]="changeBorderColor(3)" (focus)="titleFocus=true" (blur)="titleFocus=false">
             </div>
 
             <div class="mx-auto max-size-two">
                 <input type="text" class="form-control mb-4" id="subtitle" name="subtitle"
-                    [(ngModel)]="selectedMovieTemplate.subtitle" [style.color]="textColor">
+                    [(ngModel)]="selectedMovieTemplate.subtitle" [ngStyle]="changeBorderColor(4)" (focus)="subtitleFocus=true" (blur)="subtitleFocus=false">
             </div>
             
             <div class="mx-auto max-size-two">
                 <textarea type="text" class="form-control mb-4" id="body" name="body"
-                    [(ngModel)]="selectedMovieTemplate.body" rows="10" [style.color]="textColor">
+                    [(ngModel)]="selectedMovieTemplate.body" rows="10" [ngStyle]="changeBorderColor(5)" (focus)="textFocus=true" (blur)="textFocus=false">
                 </textarea>
             </div>
         </div>

@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+interface MovieTemplate {
+  title: string;
+  subtitle: string;
+  body: string;
+}
+
 @Component({
   selector: 'app-create-crawl',
   templateUrl: './create-crawl.component.html',
@@ -94,6 +100,82 @@ export class CreateCrawlComponent {
   currentMovieTemplate: MovieTemplate = this.movieTemplates[0];
   selectedMovieTemplate: MovieTemplate = { ...this.movieTemplates[0] };
 
+  introFocus: boolean = false;
+  logoFocus: boolean = false;
+  episodeSelectorFocus: boolean = false;
+  titleFocus: boolean = false;
+  subtitleFocus: boolean = false;
+  textFocus: boolean = false;
+
+  changeBorderColor(type: number) {
+    if (type === 1) {
+      if (this.introFocus) {
+        return {
+          'color': `${this.introColor}`,
+          'border-color': `${this.introColor}`,
+          'box-shadow': 'none !important',
+          'outline': 'none !important'
+        };
+      } else {
+        return {
+          'color': `${this.introColor}`
+        };
+      }
+    } else if (type === 2) {
+      if (this.episodeSelectorFocus) {
+        return {
+          'color': `${this.textColor}`,
+          'border-color': `${this.textColor}`,
+          'box-shadow': 'none !important',
+          'outline': 'none !important'
+        };
+      } else {
+        return {
+          'color': `${this.textColor}`
+        };
+      }
+    } else if (type === 3) {
+      if (this.titleFocus) {
+        return {
+          'color': `${this.textColor}`,
+          'border-color': `${this.textColor}`,
+          'box-shadow': 'none !important',
+          'outline': 'none !important'
+        };
+      } else {
+        return {
+          'color': `${this.textColor}`
+        };
+      }
+    } else if (type === 4) {
+      if (this.subtitleFocus) {
+        return {
+          'color': `${this.textColor}`,
+          'border-color': `${this.textColor}`,
+          'box-shadow': 'none !important',
+          'outline': 'none !important'
+        };
+      } else {
+        return {
+          'color': `${this.textColor}`
+        };
+      }
+    } else { //if type === 5
+      if (this.textFocus) {
+        return {
+          'color': `${this.textColor}`,
+          'border-color': `${this.textColor}`,
+          'box-shadow': 'none !important',
+          'outline': 'none !important'
+        };
+      } else {
+        return {
+          'color': `${this.textColor}`
+        };
+      }
+    }
+  }
+
   disableButton(): boolean {
     return !this.intro || !this.logo || !this.selectedMovieTemplate.body || !this.selectedMovieTemplate.title || !this.selectedMovieTemplate.subtitle || this.showInvalidMessage(1) || this.showInvalidMessage(2);
   }
@@ -106,7 +188,7 @@ export class CreateCrawlComponent {
     }
   }
 
-  resizeTextArea(event: Event): void {
+  resizeTextArea(event: Event): void { //FIXME remove?? I don't think this is doing anything
     const textArea = event.target as HTMLTextAreaElement;
     textArea.style.height = 'auto';
     textArea.style.height = `${textArea.scrollHeight}px`;
@@ -118,9 +200,20 @@ export class CreateCrawlComponent {
   }
 
   changeTextShadowColor() {
-    return {
-      'text-shadow': `-2px -2px 0 ${this.logoColor}, 2px -2px 0 ${this.logoColor}, -2px 2px 0 ${this.logoColor}, 2px 2px 0 ${this.logoColor}`,
-    };
+    if (this.logoFocus) {
+      return {
+        'text-shadow': `-2px -2px 0 ${this.logoColor}, 2px -2px 0 ${this.logoColor}, -2px 2px 0 ${this.logoColor}, 2px 2px 0 ${this.logoColor}`,
+        'border-color': `${this.logoColor}`,
+        'box-shadow': 'none !important',
+        'outline': 'none !important',
+        'caret-color': `${this.logoColor}`
+      };
+    } else {
+      return {
+        'text-shadow': `-2px -2px 0 ${this.logoColor}, 2px -2px 0 ${this.logoColor}, -2px 2px 0 ${this.logoColor}, 2px 2px 0 ${this.logoColor}`,
+        'caret-color': `${this.logoColor}`
+      };
+    }
   }
 
   generateCrawl(): void {
@@ -136,10 +229,4 @@ export class CreateCrawlComponent {
     }
     this.router.navigate(['/generated-crawl'], {queryParams: content});
   }
-}
-
-interface MovieTemplate { //FIXME move to its own file??
-  title: string;
-  subtitle: string;
-  body: string;
 }

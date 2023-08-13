@@ -12,14 +12,11 @@
 }
 
 .form-control:focus {
-    color: #FFE81F;
-    border-color: #FFE81F;
     box-shadow: none !important;
     outline: none !important;
 }
 
 #intro.form-control:focus {
-    border-color: rgb(75, 213, 238);
     box-shadow: none !important;
     outline: none !important;
 }
@@ -38,7 +35,6 @@ textarea {
 
 #logo {
     color: black;
-    caret-color: #FFE81F;
     text-shadow:
       -2px -2px 0 #FFE81F,
       2px -2px 0 #FFE81F,
@@ -47,7 +43,7 @@ textarea {
     font-family: StarJedi;
     line-height: .8em;
     font-size: 5em;
-    height: auto;
+    height: 175px;
 }
 
 textarea::-webkit-scrollbar {
@@ -84,11 +80,6 @@ textarea::-webkit-scrollbar {
 }
 
 .form-select:focus {
-    border-color: #FFE81F;
     box-shadow: none !important;
     outline: none !important;
-}
-
-#logo {
-    height: 175px;
 }
