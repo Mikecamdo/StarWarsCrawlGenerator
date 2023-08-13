@@ -188,13 +188,6 @@ export class CreateCrawlComponent {
     }
   }
 
-  resizeTextArea(event: Event): void { //FIXME remove?? I don't think this is doing anything
-    const textArea = event.target as HTMLTextAreaElement;
-    textArea.style.height = 'auto';
-    textArea.style.height = `${textArea.scrollHeight}px`;
-    console.log(textArea.style.height);
-  }
-
   onMovieTemplateChange(): void {
     this.selectedMovieTemplate = { ...this.currentMovieTemplate };
   }
