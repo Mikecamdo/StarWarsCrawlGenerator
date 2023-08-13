@@ -267,3 +267,7 @@ p {
 .btn-below {
     margin-top: 1.5vh !important;
 }
+
+.mt-6 {
+    margin-top: 3.3rem;
+}
