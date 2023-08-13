@@ -8,6 +8,8 @@ This project was made using the following technologies:
 
 HTML, CSS, TypeScript, Angular, Bootstrap
 
+The website was deployed using [Vercel](https://vercel.com).
+
 ## Build Instructions
 Follow these steps to build this project locally (make sure you have the Angular CLI downloaded!):
 1. Clone this repo using GitHub Desktop or the following git command:
