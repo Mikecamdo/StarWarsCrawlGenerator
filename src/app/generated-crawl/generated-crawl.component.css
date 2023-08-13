@@ -253,6 +253,7 @@ p {
 .btn.btn-primary {
     margin-top: 46.86vh;
     --bs-btn-border-color: #FFE81F;
+    --bs-btn-active-border-color: #FFE81F;
     color: #FFE81F;
 }
 
@@ -260,6 +261,7 @@ p {
     margin-top: 46.86vh;
     --bs-btn-border-color: #FFE81F;
     --bs-btn-hover-border-color: #FFE81F;
+    --bs-btn-active-border-color: #FFE81F;
     background-color: #FFE81F !important;
     color: black;
 }

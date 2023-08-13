@@ -54,11 +54,21 @@ textarea::-webkit-scrollbar {
     display: none;
 }
 
-.btn-primary {
+.btn.btn-primary {
     --bs-btn-border-color: #FFE81F;
     --bs-btn-hover-border-color: #FFE81F;
     --bs-btn-disabled-border-color: #FFE81F;
     --bs-btn-disabled-color: #FFE81F;
+    --bs-btn-active-border-color: #FFE81F;
+    color: #FFE81F;
+}
+
+.btn.btn-primary:hover {
+    --bs-btn-border-color: #FFE81F;
+    --bs-btn-hover-border-color: #FFE81F;
+    --bs-btn-active-border-color: #FFE81F;
+    background-color: #FFE81F !important;
+    color: black;
 }
 
 .alert-warning {
