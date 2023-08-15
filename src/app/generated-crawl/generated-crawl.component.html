@@ -28,7 +28,7 @@
     </div>
 
     <div id="board" [ngClass]="getClassBasedOnWidth(4)">
-        <div [class.content]="beginAnimation">
+        <div class="w-100" [class.content]="beginAnimation">
             <p [ngClass]="getClassBasedOnWidth(2)" id="title" [style.color]="textColor">{{title}}</p>
             <p [ngClass]="getClassBasedOnWidth(3)" id="subtitle" [style.color]="textColor">{{subtitle}}</p>
             
